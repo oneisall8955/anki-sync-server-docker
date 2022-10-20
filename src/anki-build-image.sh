@@ -19,7 +19,7 @@ mkdir -p ${ANKI_TMP_WORKSPACE}
 cd ${ANKI_TMP_WORKSPACE}/
 git clone ${ANKI_GIT_URL}
 cd anki-sync-server
-git branch ${ANKI_BRANCH}
+git checkout ${ANKI_BRANCH}
 
 # the files needed to build the image
 cp "${SHELL_DIR}/.dockerignore" "${SHELL_DIR}/Dockerfile" ./
