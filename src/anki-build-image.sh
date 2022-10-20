@@ -25,7 +25,7 @@ git checkout ${ANKI_BRANCH}
 cp "${SHELL_DIR}/.dockerignore" "${SHELL_DIR}/Dockerfile" ./
 
 # build
-docker build --network=host -t ${ANKI_IMG_NAME} .
+docker build --network=host --no-cache -t ${ANKI_IMG_NAME} .
 
 # copy docker restart
 [ ! -f "${ANKI_HOME}/anki-docker-restart.sh" ] && cp "${SHELL_DIR}/anki-docker-restart.sh" "${ANKI_HOME}/"
