@@ -1,2 +1,2 @@
-# ankisyncserver-docker
-docker构建anki同步服务
+# anki sync server-docker
+

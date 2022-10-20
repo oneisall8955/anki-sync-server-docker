@@ -1,0 +1,19 @@
+version: '3'
+services:
+  anki:
+    container_name: anki
+    image: myanki:v1.0
+    ports:
+      - "27701:27701"
+    environment:
+      - ANKISYNCD_PORT=27701
+      - ANKISYNCD_BASE_URL=/sync/
+      - ANKISYNCD_BASE_MEDIA_URL=/msync/
+      - ANKISYNCD_DATA_ROOT=/data/collections
+      - ANKISYNCD_AUTH_DB_PATH=/data/auth.db
+      - ANKISYNCD_SESSION_DB_PATH=/data/session.db
+    volumes:
+      - /opt/software/anki/data/:/data
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
