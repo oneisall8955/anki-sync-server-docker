@@ -33,6 +33,9 @@ docker build --network=host -t ${ANKI_IMG_NAME} .
 
 chmod +x "${ANKI_HOME}/anki-docker-restart.sh"
 
+# clean tmp folder
+rm ${ANKI_TMP_WORKSPACE:=/tmp/anki.d}/ -rf
+
 echo "##############################################################"
 echo " build docker image successful !                              "
 echo " please edit ${ANKI_HOME}/docker-compose.yml                  "
